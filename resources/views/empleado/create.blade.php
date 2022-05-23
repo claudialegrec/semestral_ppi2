@@ -1,4 +1,4 @@
-<form action="" method="post" enctype="multipart/form-data">
+<form action="{{ url('/empleado') }}" method="post" enctype="multipart/form-data">
   <!-- Input para nombre del empleado -->
   <div style="padding:10px">
     <label for="Nombre">Nombre</label>
@@ -12,7 +12,7 @@
   <div style="padding:10px">
     <label for="ApellidoPaterno">Nombre</label>
     <br>
-    <input type="text" name="ApellidoPaterno" id="ApellidoPaterno></input>
+    <input type="text" name="ApellidoPaterno" id="ApellidoPaterno"></input>
   </div>
 
   <br>
