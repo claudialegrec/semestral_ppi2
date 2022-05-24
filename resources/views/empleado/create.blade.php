@@ -1,4 +1,5 @@
 <form action="{{ url('/empleado') }}" method="post" enctype="multipart/form-data">
+  @csrf
   <!-- Input para nombre del empleado -->
   <div style="padding:10px">
     <label for="Nombre">Nombre</label>
@@ -10,7 +11,7 @@
 
   <!-- Input para apellido paterno del empleado -->
   <div style="padding:10px">
-    <label for="ApellidoPaterno">Nombre</label>
+    <label for="ApellidoPaterno">Apellido Paterno</label>
     <br>
     <input type="text" name="ApellidoPaterno" id="ApellidoPaterno"></input>
   </div>
