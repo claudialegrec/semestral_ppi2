@@ -47,3 +47,7 @@
   <br>
 
   <input type="submit" value="Guardar datos"></input>
+
+  <br><br>
+
+  <a href="{{ url('empleado/') }}">Regresar</a>

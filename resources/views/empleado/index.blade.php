@@ -1,3 +1,5 @@
+<a href="{{ url('empleado/create') }}">Registrar nuevo empleado</a>
+
 <table>
   <head>
     <tr>
