@@ -45,5 +45,5 @@
 
   <br>
 
-  <input type="submit" name="Enviar" id="Enviar"></input>
+  <input type="submit" value="Guardar datos"></input>
 </form>
