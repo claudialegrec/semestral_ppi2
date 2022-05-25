@@ -1,6 +1,12 @@
-<form action="{{ url('/empleado') }}" method="post" enctype="multipart/form-data">
-  @csrf
+@extends('layouts.app')
+@section('content')
 
-  @include('empleado.form', ['modo'=>'Crear'])
+<div class="container">
+  <form action="{{ url('/empleado') }}" method="post" enctype="multipart/form-data">
+    @csrf
 
-</form>
+    @include('empleado.form', ['modo'=>'Crear'])
+
+  </form>
+</div>
+@endsection

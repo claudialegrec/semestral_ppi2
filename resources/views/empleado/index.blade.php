@@ -1,54 +1,62 @@
-@if(Session::has('mensaje'))
+@extends('layouts.app')
+@section('content')
 
-{{ Session::get('mensaje') }}
+<div class="container">
 
-@endif
+  @if(Session::has('mensaje'))
 
-<a href="{{ url('empleado/create') }}">Registrar nuevo empleado</a>
+  {{ Session::get('mensaje') }}
 
-<table class="table table-light">
-  <thead class="thead-light">
-    <tr>
-      <th>#</th>
-      <th>Foto</th>
-      <th>Nombre</th>
-      <th>Apellido Paterno</th>
-      <th>Apellido Materno</th>
-      <th>Correo</th>
+  @endif
 
-      <th>Acciones</th>
-    </tr>
-  </thead>
+  <a href="{{ url('empleado/create') }}">Registrar nuevo empleado</a>
 
-  <tbody>
-    @foreach( $empleados as $empleado )
-    <tr>
-      <td>{{ $empleado-> id }}</td>
+  <table class="table table-light">
+    <thead class="thead-light">
+      <tr>
+        <th>#</th>
+        <th>Foto</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Correo</th>
 
-      <td>
-        <img src="{{ asset('storage').'/'.$empleado->Foto }}" width="100" alt="">
-      </td>
+        <th>Acciones</th>
+      </tr>
+    </thead>
 
-      <td>{{ $empleado-> Nombre }}</td>
-      <td>{{ $empleado-> ApellidoPaterno }}</td>
-      <td>{{ $empleado-> ApellidoMaterno }}</td>
-      <td>{{ $empleado-> Correo }}</td>
-      <td> 
-      
-      <a href="{{  url('/empleado/'.$empleado->id.'/edit') }}">
-        Editar
-      </a>
-      
-      | 
-      
-      <form action="{{  url('/empleado/'.$empleado->id) }}" method="post">
-        @csrf
-        {{  method_field('DELETE') }}
-        <input type="submit" onclick="return confirm('¿Seguro que quieres borrar este registro?')" value="Borrar">
-      </form>
+    <tbody>
+      @foreach( $empleados as $empleado )
+      <tr>
+        <td>{{ $empleado-> id }}</td>
 
-      </td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
+        <td>
+          <img src="{{ asset('storage').'/'.$empleado->Foto }}" width="100" alt="">
+        </td>
+
+        <td>{{ $empleado-> Nombre }}</td>
+        <td>{{ $empleado-> ApellidoPaterno }}</td>
+        <td>{{ $empleado-> ApellidoMaterno }}</td>
+        <td>{{ $empleado-> Correo }}</td>
+        <td> 
+        
+        <a href="{{  url('/empleado/'.$empleado->id.'/edit') }}">
+          Editar
+        </a>
+        
+        | 
+        
+        <form action="{{  url('/empleado/'.$empleado->id) }}" method="post">
+          @csrf
+          {{  method_field('DELETE') }}
+          <input type="submit" onclick="return confirm('¿Seguro que quieres borrar este registro?')" value="Borrar">
+        </form>
+
+        </td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+
+</div>
+@endsection
