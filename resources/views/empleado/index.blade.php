@@ -1,7 +1,13 @@
+@if(Session::has('mensaje'))
+
+{{ Session::get('mensaje') }}
+
+@endif
+
 <a href="{{ url('empleado/create') }}">Registrar nuevo empleado</a>
 
-<table>
-  <head>
+<table class="table table-light">
+  <thead class="thead-light">
     <tr>
       <th>#</th>
       <th>Foto</th>
@@ -12,9 +18,9 @@
 
       <th>Acciones</th>
     </tr>
-  </head>
+  </thead>
 
-  <body>
+  <tbody>
     @foreach( $empleados as $empleado )
     <tr>
       <td>{{ $empleado-> id }}</td>
@@ -44,5 +50,5 @@
       </td>
     </tr>
     @endforeach
-  </body>
+  </tbody>
 </table>

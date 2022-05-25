@@ -1,4 +1,9 @@
   <!-- Input para nombre del empleado -->
+  
+  <div>
+    <h1> {{ $modo }} empleado </h1>
+  </div>
+  
   <div style="padding:10px">
     <label for="Nombre">Nombre</label>
     <br>
@@ -46,7 +51,7 @@
 
   <br>
 
-  <input type="submit" value="Guardar datos"></input>
+  <input type="submit" value="{{ $modo }} datos"></input>
 
   <br><br>
 
