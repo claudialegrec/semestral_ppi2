@@ -51,8 +51,6 @@
 
   <br>
 
-  <input type="submit" value="{{ $modo }} datos"></input>
+  <input type="submit" class="btn btn-success" value="{{ $modo }} datos"></input>
 
-  <br><br>
-
-  <a href="{{ url('empleado/') }}">Regresar</a>
+  <a class="btn btn-primary" href="{{ url('empleado/') }}">Regresar</a>
